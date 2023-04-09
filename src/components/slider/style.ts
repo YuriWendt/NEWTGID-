@@ -12,6 +12,12 @@ const slideDownReturn = keyframes`
   }
 `;
 
+export const SliderList = styled.div`
+  position: absolute;
+  top: 125%;
+  left: 16.5%;
+`;
+
 export const SliderWrapper = styled.div`
   width: 100%;
   height: auto;

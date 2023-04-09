@@ -36,7 +36,7 @@ export const StyledButton = styled.button`
     background: #191c20;
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     display: none;
     right: 30%;
     bottom: 3%;

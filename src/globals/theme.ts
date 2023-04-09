@@ -1,28 +1,29 @@
 import LogoPng from '../assets/logo.png'
 import LogoWhitePng from '../assets/logo-white.png'
 import LogoTextPng from '../assets/logo-name.png'
-import BackgroundPng from '../assets/background.png'
+import BackgroundGradientPng from '../assets/backgroundgradient.png'
 import SafeWayLogo from '../assets/safeway.png'
 import DesconfieLogo from '../assets/desconfieja.png'
 import LevelLogo from '../assets/level.png'
 import BlbrokersLogo from '../assets/blbrokers.png'
 import ArckpayLogo from '../assets/arckpay.png'
+import BannerTGIDPng from '../assets/bannertgid.png'
 
 
 export const theme = {
     colors: 
     {
         primary: {
-            color100:       '#192738',
-            color80:        '#263B54',
-            color60:        '#466C9B',
+            color100:       '#0e1012',
+            color80:        '#15181a',
+            color60:        '#434647',
             color40:        '#80A0C6',
             color20:        '#C7D5E6'
         }, 
         secondary: {
-            color100:       '#F1B941',
-            color80:        '#F4C767',
-            color60:        '#F6D58D',
+            color100:       '#a8812d',
+            color80:        '#F1B941',
+            color60:        '#f3c767',
             color40:        '#F9E3B3',
             color20:        '#FCF1D9'
         },
@@ -64,7 +65,8 @@ export const theme = {
         logo: LogoPng,
         logoWhite: LogoWhitePng,
         logoText: LogoTextPng,
-        background: BackgroundPng,
+        bannerTgid: BannerTGIDPng,
+        backgroundgradient: BackgroundGradientPng,
         safewaylogo: SafeWayLogo,
         descofielogo: DesconfieLogo,
         levellogo: LevelLogo,

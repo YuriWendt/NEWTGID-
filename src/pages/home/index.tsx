@@ -1,25 +1,17 @@
 import { SectionButton } from "../../components/section-button";
 import { Sections } from "../../components/sections";
-import { SliderComponent } from "../../components/slider";
 import { Stack } from "../../effects/glitch/style";
 import { Row } from "../../globals/grid";
 import { theme } from "../../globals/theme";
-import { GlitchEffect, Logo, SectionWrapper, SliderList, Stick, StyledContainer, TextContent } from "./style";
+import { Box, GlitchEffect, GradientBorder, Logo, SectionTwo, SectionTwoContent, SectionWrapper, Stick, StyledContainer, TextContent, TypingEffect } from "./style";
+import { useState, useEffect } from 'react';
 
 export function Home() {
 
-    const characters = [
-        { id: 1, name: 'Personagem 1', image: `${theme.img.safewaylogo}` },
-        { id: 2, name: 'Personagem 2', image: `${theme.img.descofielogo}` },
-        { id: 3, name: 'Personagem 3', image: `${theme.img.levellogo}` },
-        { id: 4, name: 'Personagem 4', image: `${theme.img.blbrokers}` },
-      ];
 
-      function handleCharacterSelect(characterId: number)  {
-        console.log(`Personagem selecionado: ${characterId}`);
-        // Lógica para tratar a seleção do personagem
-      };
-      
+    useEffect(() => {
+    }, []);
+
     return (
         <>
             <SectionWrapper id="section1">
@@ -48,18 +40,26 @@ export function Home() {
 
 
             <Sections
-                id="section2" to="top" styles={'{"position": "absolute", "right": "51%", "top": "115%"}'}
-                totwo="section3" stylestwo='{"position": "absolute", "right": "51%", "top": "200%"}'>
-                
-                <SliderList><SliderComponent /></SliderList>
-
-
-            </Sections>
-
-            <Sections
-                id="section3" to="section2" styles={'{"position": "absolute", "right": "51%", "top": "215%"}'}
-                totwo="section3" stylestwo='{"position": "absolute", "right": "51%", "top": "200%"}'>
-
+                id="section2"
+                background={{
+                    backgroundImage: `url(${theme.img.bannerTgid})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                }}
+                to="top"
+                styles={'{"position": "absolute", "right": "51%", "top": "115%"}'}
+                totwo="section3"
+                stylestwo='{"position": "absolute", "right": "51%", "top": "200%"}'>
+                <SectionTwo>
+                    <SectionTwoContent>
+                        <TypingEffect>
+                            TRANSFORME-SE EM DIGITAL
+                        </TypingEffect>
+                        <h2>Colocar uma ideia inovadora em prática não é uma tarefa fácil e você não precisa lidar com todo o processo sozinho!</h2>
+                        <h2>Somos uma fábrica de startups que ajuda empreendedores a tirar seus projetos do papel –</h2>
+                        <h2>planejando, desenvolvendo o seu produto e colocando sua empresa no mercado de forma rápida e eficiente </h2>
+                    </SectionTwoContent>
+                </SectionTwo>
             </Sections>
 
         </>

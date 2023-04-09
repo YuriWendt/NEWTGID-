@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
 export const stackAnimation = keyframes`
   0% {
@@ -31,16 +31,36 @@ export const glitchAnimation = keyframes`
   4%, 100% {  text-shadow: none; transform: none; }
 `;
 
-export const Stack = styled.span<{ index: number, stacks: number }>`
+export const Stack = styled.span<{ index: number; stacks: number }>`
   margin: 1rem;
   font-weight: bold;
   grid-row-start: 1;
   grid-column-start: 1;
   font-size: 4rem;
-  --stack-height: calc(100% / ${props => props.stacks} - 1px);
-  --clip-top: calc(var(1) * ${props => props.index});
+  --stack-height: calc(100% / ${(props) => props.stacks} - 1px);
+  --clip-top: calc(var(1) * ${(props) => props.index});
   --clip-bottom: calc(var(1) * var(--inverse-index));
   clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
-  animation: ${stackAnimation} 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(${props => props.index} * 120ms), ${glitchAnimation} 2s ease infinite 2s alternate-reverse;
-`;
+  animation: ${stackAnimation} 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1
+      backwards calc(${(props) => props.index} * 120ms),
+    ${glitchAnimation} 2s ease infinite 2s alternate-reverse;
 
+  @media screen and (max-width: 768px) {
+    margin: 5px;
+    font-size: 50px;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (min-width: 1200px) and (max-width: 1365px) {
+    margin: 5px;
+    font-size: 50px;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+`;

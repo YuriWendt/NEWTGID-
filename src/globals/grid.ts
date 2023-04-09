@@ -37,4 +37,12 @@ export const Row = styled.div`
     &:after{
         clear: both;
     }
+
+    @media only screen and (min-width: 1024px) and (max-width: 1360px)  {
+        max-width: 1024px;
+    } 
+
+    @media only screen and (min-width: 1360px) {
+        max-width: 1328px;
+    } 
 `

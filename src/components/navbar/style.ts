@@ -1,13 +1,18 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Container } from "../../globals/grid";
 import { theme } from "../../globals/theme";
+
+const RightToLeft = keyframes`
+    to {
+        transform: translateX(-168px);
+    }
+`;
 
 export const StyledContainer = styled.div`
   padding: 0;
   max-width: inherit;
   display: flex;
-  //background-color: #151811;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px ${theme.colors.primary.color100};
   height: 80px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -28,10 +33,21 @@ export const Content = styled.div`
     margin-left: auto;
     cursor: pointer;
   }
+
+  @media (max-width: 767px) {
+    h1 {
+      display: none;
+    }
+  }
 `;
 
 export const Logo = styled.img`
+  width: 80px;
+  height: 80px;
   z-index: 0;
+
+  @media (max-width: 768px) {
+  }
 `;
 
 export const Text = styled.p`
@@ -47,21 +63,46 @@ export const Text = styled.p`
   }
 `;
 
+export const MenuContainer = styled.div<{ isMobile: boolean }>`
+  display: flex;
+
+  @media (max-width: 768px) {
+    width: max-content;
+    display: ${({ isMobile }) => (isMobile ? "block" : "none")};
+    border-radius: 6px;
+    border-bottom: 1px solid ${theme.colors.secondary.color100};
+    border-left: 1px solid ${theme.colors.secondary.color100};
+    background-color: ${theme.colors.primary.color80};
+    color: black;
+    position: absolute;
+    height: 250px;
+    right: 0;
+    top: 80px;
+    cursor: pointer;
+    padding: 10px 35px 16px 0px;
+    overflow: hidden; /* Adicione overflow: hidden para esconder o conteúdo do menu quando a altura é 0 */
+    transition: ${({ isMobile }) => (isMobile ? "height 0.3s ease" : "none")};
+    z-index: 10;
+  }
+`;
+
 export const List = styled.ul<{ isMobile: boolean }>`
   display: flex;
   justify-content: center;
   margin: 0;
-  max-height: ${(props) => (props.isMobile ? "100%" : "auto")};
   transition: max-height 0.4s ease;
   width: 100%;
   align-items: center;
-  flex-direction: ${(props) => (props.isMobile ? "column" : "row")};
-  overflow: ${(props) => (props.isMobile ? "auto" : "visible")};
 
   @media (max-width: 768px) {
-    max-height: ${(props) => (props.isMobile ? "100%" : "0")};
-    overflow: hidden;
-    flex-direction: column;
+    display: grid;
+
+    li {
+      position: relative;
+      margin-top: 15px;
+      font-size: 20px;
+      font-weight: bolder;
+    }
   }
 `;
 
@@ -96,6 +137,7 @@ export const SubList = styled.ul<{ showSubRoutes?: boolean }>`
 
 export const ButtomMobile = styled.span`
   display: none;
+  margin-right: 30px;
   width: 50px;
 
   @media (max-width: 768px) {

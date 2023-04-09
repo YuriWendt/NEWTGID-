@@ -4,7 +4,7 @@ export const SectionWrapper = styled.section`
   height: 100vh; /* Define a altura como 100% da altura da janela */
 
   @media screen and (max-width: 768px) {
-    height: auto;
+    height: 100vh;
     padding-top: 64px;
   }
 `;
