@@ -12,10 +12,13 @@ export function ArrowIcon() {
     return (
         <BsFillArrowDownCircleFill
             style={{
+                position: 'absolute',
+                top: 1,
+                left: -2,
                 color: "#9c7e44",
                 display: "flex",
-                width: 39,
-                height: 40,
+                width: 25,
+                height: 20,
             }}
         />
     )
@@ -25,10 +28,13 @@ export function ArrowTopIcon() {
     return (
         <BsFillArrowUpCircleFill
             style={{
+                position: 'absolute',
+                top: 1,
+                left: -2,
                 color: "#9c7e44",
                 display: "flex",
-                width: 39,
-                height: 40,
+                width: 25,
+                height: 20,
             }}
         />
     )

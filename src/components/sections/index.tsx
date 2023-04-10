@@ -8,7 +8,7 @@ export function Sections({ ...props}) {
             <SectionContent>
                 <SectionButtonTop to={props.to} styles={props.styles} />
                 {props.children}
-                <SectionButton to={props.totwo} styles={props.stylestwo} />
+                {/* <SectionButton to={props.totwo} styles={props.stylestwo} /> */}
             </SectionContent>
         </SectionWrapper>
 

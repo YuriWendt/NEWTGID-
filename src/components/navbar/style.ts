@@ -69,13 +69,13 @@ export const MenuContainer = styled.div<{ isMobile: boolean }>`
   @media (max-width: 768px) {
     width: max-content;
     display: ${({ isMobile }) => (isMobile ? "block" : "none")};
-    border-radius: 6px;
-    border-bottom: 1px solid ${theme.colors.secondary.color100};
-    border-left: 1px solid ${theme.colors.secondary.color100};
-    background-color: ${theme.colors.primary.color80};
+    border-radius: 3px;
+    border-bottom: 2px solid ${theme.colors.secondary.color100};
+    border-left: 2px solid ${theme.colors.secondary.color100};
+    background: ${theme.colors.white};
     color: black;
     position: absolute;
-    height: 250px;
+    height: 400px;
     right: 0;
     top: 80px;
     cursor: pointer;

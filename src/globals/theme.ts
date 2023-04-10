@@ -8,6 +8,7 @@ import LevelLogo from '../assets/level.png'
 import BlbrokersLogo from '../assets/blbrokers.png'
 import ArckpayLogo from '../assets/arckpay.png'
 import BannerTGIDPng from '../assets/bannertgid.png'
+import Team from '../assets/team.jpeg'
 
 
 export const theme = {
@@ -72,6 +73,7 @@ export const theme = {
         levellogo: LevelLogo,
         blbrokers: BlbrokersLogo,
         arckpay: ArckpayLogo,
+        team: Team,
     },
     icon: {
     },

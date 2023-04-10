@@ -3,6 +3,7 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { useNavigate } from "react-router-dom";
 import { theme } from "../../globals/theme";
 import { ButtomMobile, Content, Items, List, Logo, MenuContainer, StyledContainer, SubList } from "./style";
+import { cursorTo } from "readline";
 
 type RouteType = {
     name: string,
@@ -32,20 +33,11 @@ export function Navbar() {
 
     function buildRoutes() {
         let build: RouteType[] = [
-            { name: 'Quem Somos', path: '/', isOpen: false },
+            { name: 'Inicio', path: '/', isOpen: false },
+            { name: 'Quem Somos', path: '/aboutus', isOpen: false },
             {
                 path: '/products',
                 name: 'Nossos Produtos',
-                subRoutes: [
-                    {
-                        path: '/about/history',
-                        name: 'History'
-                    },
-                    {
-                        path: '/about/team',
-                        name: 'Team'
-                    }
-                ],
                 isOpen: false
             },
             {
@@ -75,8 +67,8 @@ export function Navbar() {
     return (
         <>
             <StyledContainer id="top">
-                <Content>
-                    <Logo src={theme.img.logoWhite} />
+                <Content onClick={() => redirect('/')} style={{cursor: 'pointer'}}>
+                    <Logo src={theme.img.logoWhite}/>
                     <h1>TGID</h1>
                 </Content>
                 <ButtomMobile onClick={() => toggleMenu()}><AiOutlineMenu style={{ width: 50, height: 50, padding: 10 }} /></ButtomMobile>

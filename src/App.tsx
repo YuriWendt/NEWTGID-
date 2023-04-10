@@ -3,17 +3,18 @@ import { Loader } from "./components/loader";
 import { Navbar } from "./components/navbar"
 import { useLoader } from "./hooks/useLoader";
 import { Home } from "./pages/home"
+import { MainRoutes } from "./routes";
 
 
 function App() {
 
   const [showContent, setShowContent] = useState(false);
-  const { setIsLoading } = useLoader();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setShowContent(true);
-    }, 2000); // 2000ms = 2 segundos
+    }, 2000);
   }, []);
 
   return (
@@ -22,7 +23,7 @@ function App() {
       {showContent && (
         <>
           <Navbar />
-          <Home />
+          <MainRoutes />
         </>
       )}
     </>

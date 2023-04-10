@@ -2,6 +2,7 @@ import styled, { keyframes } from "styled-components";
 import { Container } from "../../globals/grid";
 import { theme } from "../../globals/theme";
 import { url } from 'inspector';
+import { MoreButton } from "../../components/more-button";
 
 const spaceInDown = keyframes`
   0% {
@@ -178,6 +179,11 @@ export const TextContent = styled.div`
   }
 `;
 
+export const MoreButtonStyled = styled.div` 
+  margin-top: 100px;
+  margin-left: 300px;
+`
+
 export const SectionTwo = styled.div`
   position: absolute;
   top: 125%;
@@ -204,35 +210,7 @@ export const TypingEffect = styled.span`
   animation: ${typing} 4s steps(50); /* Ajuste a duração da animação conforme necessário */
 `;
 
-
-export const Box = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  height: 200px;
-  color: white;
-  font-family: 'Raleway';
-  font-size: 2.5rem;
-`;
-
-export const GradientBorder = styled.div`
-  --borderWidth: 5px;
-  background: url(${theme.img.backgroundgradient});
-  position: relative;
-  border-radius: var(--borderWidth);
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-    background: linear-gradient(60deg, #a8812d, #F1B941, #f3c767, #F9E3B3, #FCF1D9, #FFFF);
-    border-radius: calc(2 * var(--borderWidth));
-    z-index: -1;
-    animation: ${animatedgradient} 3s ease alternate infinite;
-    background-size: 300% 300%;
-  }
-`;
+export const SubText = styled.h2`
+  color: ${theme.colors.primary.color100};
+  text-align: start;
+`

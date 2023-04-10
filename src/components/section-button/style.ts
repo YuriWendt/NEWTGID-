@@ -13,13 +13,13 @@ export const reflex = keyframes`
 `;
 
 export const StyledButton = styled.button`
-  width: 54px;
-  height: 54px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   border-color: rgba(156, 126, 68, 1);
   background: #191c20;
   position: absolute;
-  right: 51%;
+  right: 50%;
   bottom: 5%;
   cursor: pointer;
   transition: 0.2s;
