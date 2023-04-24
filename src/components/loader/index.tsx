@@ -1,4 +1,4 @@
-import gif from '../../assets/logo-white.gif';
+import gif from '../../assets/logoLoading.gif';
 import { LoadingIndicator, LoadingWrapper } from './style';
 
 export function Loader() {

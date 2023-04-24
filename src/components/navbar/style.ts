@@ -10,6 +10,7 @@ const RightToLeft = keyframes`
 
 export const StyledContainer = styled.div`
   padding: 0;
+  width: 100%;
   max-width: inherit;
   display: flex;
   box-shadow: 0 0 10px ${theme.colors.primary.color100};
@@ -18,6 +19,9 @@ export const StyledContainer = styled.div`
   box-sizing: border-box;
   padding: 0;
   justify-content: space-between;
+  background: url(${theme.img.backgroundgradient});
+  position: fixed;
+  z-index: 30;
 
   span {
     margin-left: auto;

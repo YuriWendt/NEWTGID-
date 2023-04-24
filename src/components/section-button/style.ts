@@ -1,6 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { theme } from "../../globals/theme";
-
+import { Link } from "react-scroll";
 
 export const reflex = keyframes`
   0% {
@@ -12,18 +12,23 @@ export const reflex = keyframes`
   }
 `;
 
-export const StyledButton = styled.button`
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  border-color: rgba(156, 126, 68, 1);
-  background: #191c20;
-  position: absolute;
-  right: 50%;
-  bottom: 5%;
+export const StyledLink = styled(Link)`
   cursor: pointer;
   transition: 0.2s;
-  z-index: 9;
+  svg {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+`;
+
+export const StyledDiv = styled.div`
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
   &:hover {
     transform: scale(1.2);
   }
@@ -42,10 +47,3 @@ export const StyledButton = styled.button`
     bottom: 3%;
   }
 `;
-
-
-export const StyledCircle = styled.span`
-  position: absolute
-`;
-
-

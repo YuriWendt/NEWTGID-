@@ -2,13 +2,30 @@ import LogoPng from '../assets/logo.png'
 import LogoWhitePng from '../assets/logo-white.png'
 import LogoTextPng from '../assets/logo-name.png'
 import BackgroundGradientPng from '../assets/backgroundgradient.png'
+import BackgroundCardPng from '../assets/backgroundCard.png'
 import SafeWayLogo from '../assets/safeway.png'
 import DesconfieLogo from '../assets/desconfieja.png'
 import LevelLogo from '../assets/level.png'
 import BlbrokersLogo from '../assets/blbrokers.png'
 import ArckpayLogo from '../assets/arckpay.png'
+import LogtrackLogo from '../assets/logtrack.png'
 import BannerTGIDPng from '../assets/bannertgid.png'
 import Team from '../assets/team.jpeg'
+import CardBorder from '../assets/bt.png'
+import CardBorderSelected from '../assets/bt_selected.png'
+import AppSafeway from '../assets/safeway/computer.png'
+import AppDescomplica from '../assets/desconfieja/feature-1.png'
+import AppLogtrack from '../assets/logtrack/feature-1.png'
+import AppBlbrockers from '../assets/blbrokers/tecnologia-icon.svg'
+import AppLevel from '../assets/level/feature-2.jpg'
+import AppArckpay from '../assets/arckpay/mockup06.png'
+import BannerBlbrockersPng from '../assets/blbrokers/bannerbl.png'
+import BannerDescomplicaPng from '../assets/desconfieja/banner-desconfie.png'
+import BannerLevelPng from '../assets/level/banner-level-1.jpg'
+import BannerLogtrackPng from '../assets/logtrack/banner-logtrack.jpg'
+import BannerSafewayPng from '../assets/safeway/banner-2.webp'
+import BannerArckpayPng from '../assets/arckpay/banneraarckpay.png'
+import Btnext from '../assets/bt_arrow.png'
 
 
 export const theme = {
@@ -63,17 +80,38 @@ export const theme = {
         lightBlue:          '#92D0FF',
     },
     img: {
+        //LOGOS
         logo: LogoPng,
         logoWhite: LogoWhitePng,
         logoText: LogoTextPng,
-        bannerTgid: BannerTGIDPng,
-        backgroundgradient: BackgroundGradientPng,
         safewaylogo: SafeWayLogo,
+        Logtrack: LogtrackLogo,
         descofielogo: DesconfieLogo,
         levellogo: LevelLogo,
         blbrokers: BlbrokersLogo,
         arckpay: ArckpayLogo,
+        //Background
+        backgroundgradient: BackgroundGradientPng,
+        backgroundCardUnselected: CardBorder,
+        backgroundCardSelected: CardBorderSelected,
+        //Banners
+        bannerTgid: BannerTGIDPng,
+        bannerBlbrockers: BannerBlbrockersPng,
+        bannerDescomplica: BannerDescomplicaPng,
+        bannerLevel: BannerLevelPng,
+        bannerLogtrack: BannerLogtrackPng,
+        bannerSafeway: BannerSafewayPng,
+        bannerArckpay: BannerArckpayPng,
         team: Team,
+        //Randoms
+        borderCard: CardBorder,
+        AppBlbrockers: AppBlbrockers,
+        AppDescomplica: AppDescomplica,
+        AppLevel: AppLevel,
+        AppLogtrack: AppLogtrack,
+        AppSafeway: AppSafeway,
+        AppArckpay: AppArckpay,
+        BtNext: Btnext,
     },
     icon: {
     },

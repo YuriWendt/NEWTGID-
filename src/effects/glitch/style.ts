@@ -43,7 +43,7 @@ export const Stack = styled.span<{ index: number; stacks: number }>`
   clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
   animation: ${stackAnimation} 340ms cubic-bezier(0.46, 0.29, 0, 1.24) 1
       backwards calc(${(props) => props.index} * 120ms),
-    ${glitchAnimation} 2s ease infinite 2s alternate-reverse;
+    ${glitchAnimation} 2s ease infinite 1s alternate-reverse;
 
   @media screen and (max-width: 768px) {
     margin: 5px;

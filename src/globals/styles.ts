@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
     font: 400 16px 'Gotham HTF Book', sans-serif;
 
 @media screen and (min-width: 768px) {
-    overflow: hidden;
+    
   }
   }
 

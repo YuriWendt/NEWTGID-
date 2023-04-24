@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SectionWrapper = styled.section`
-  height: 100vh; /* Define a altura como 100% da altura da janela */
+  height: 100vh;
 
   @media screen and (max-width: 768px) {
     height: 100vh;
@@ -10,7 +10,7 @@ export const SectionWrapper = styled.section`
 `;
 
 export const SectionContent = styled.div`
-  max-width: 800px;
+  max-width: 100%;
   padding: 0 16px;
   text-align: center;
 

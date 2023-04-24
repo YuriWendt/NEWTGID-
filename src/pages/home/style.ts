@@ -1,62 +1,40 @@
 import styled, { keyframes } from "styled-components";
+import "swiper/swiper-bundle.min.css";
 import { Container } from "../../globals/grid";
 import { theme } from "../../globals/theme";
-import { url } from 'inspector';
-import { MoreButton } from "../../components/more-button";
 
-const spaceInDown = keyframes`
-  0% {
+const fadeIn = keyframes`
+  from {
     opacity: 0;
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(0.2) translate(0%, 200%);
-    transform: scale(0.2) translate(0%, 200%);
+    transform: translateY(20px);
   }
-
-  100% {
+  to {
     opacity: 1;
-    -webkit-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scale(1) translate(0%, 0%);
-    transform: scale(1) translate(0%, 0%);
+    transform: translateY(0);
   }
 `;
 
-const spaceInRight = keyframes`
-    0% {
-    opacity: 0;
-    -webkit-transform-origin: 100% 50%;
-    transform-origin: 100% 50%;
-    -webkit-transform: scale(0.2) translate(200%, 0%);
-    transform: scale(0.2) translate(200%, 0%);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform-origin: 100% 50%;
-    transform-origin: 100% 50%;
-    -webkit-transform: scale(1) translate(0%, 0%);
-    transform: scale(1) translate(0%, 0%);
-  }
-`;
-
-const swashIn = keyframes`
+const boingInUp = keyframes`
   0% {
     opacity: 0;
-    transform-origin: 50% 50%;
-    transform: scale(0, 0);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(1500px) rotateX(-90deg);
+    transform: perspective(1500px) rotateX(-90deg);
   }
-
-  90% {
+  50% {
     opacity: 1;
-    transform-origin: 50% 50%;
-    transform: scale(0.9, 0.9);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(1500px) rotateX(50deg);
+    transform: perspective(1500px) rotateX(50deg);
   }
-
   100% {
     opacity: 1;
-    transform-origin: 50% 50%;
-    transform: scale(1, 1);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    -webkit-transform: perspective(1500px) rotateX(0deg);
+    transform: perspective(1500px) rotateX(0deg);
   }
 `;
 
@@ -81,108 +59,10 @@ const typing = keyframes`
   }
 `;
 
-export const SectionWrapper = styled.section`
-  height: 100vh;
+export const ContainerStyled = styled(Container)`
+  width: 100%;
+  height: 100%;
 `;
-
-export const Logo = styled.img`
-  z-index: 0;
-  width: 200px;
-  height: 200px;
-  animation: ${spaceInRight} 4s;
-
-  @media screen and (max-width: 480px) {
-    width: 120px;
-    height: 120px;
-  }
-`;
-
-export const StyledContainer = styled(Container)`
-  display: flex;
-  padding: 5rem;
-
-  @media screen and (max-width: 768px) {
-    display: grid;
-    padding: 2rem;
-    text-align: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-export const GlitchEffect = styled.div`
-  position: relative;
-
-  @media screen and (max-width: 768px) {
-    width: min-content;
-    text-align: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-export const Stick = styled.span`
-  width: 3px;
-  height: 500px;
-  background: ${theme.colors.secondary.color100};
-  position: absolute;
-  margin: 3rem;
-  right: 50%;
-  top: 20%;
-
-  @media screen and (max-width: 767px) {
-    width: 300px;
-    height: 3px;
-    margin: 0;
-    position: absolute;
-    right: 10%;
-    top: 50%;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    width: 500px;
-    height: 3px;
-    margin: 0;
-    position: absolute;
-    right: 20%;
-    top: 50%;
-  }
-
-  @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    position: absolute;
-    right: 49%;
-    top: 10%;
-  }
-`;
-
-export const TextContent = styled.div`
-  max-width: 400px;
-  margin-top: 7rem;
-  float: right;
-  text-align: start;
-  display: grid;
-  animation: ${swashIn} 3s forwards;
-
-  h1 {
-    font-size: 50px;
-  }
-
-  p {
-    font-size: 20px;
-    color: ${theme.colors.secondary.color100};
-  }
-
-  @media screen and (min-width: 1025px) and (max-width: 1367px) {
-    margin-top: 5rem;
-  }
-`;
-
-export const MoreButtonStyled = styled.div` 
-  margin-top: 100px;
-  margin-left: 300px;
-`
 
 export const SectionTwo = styled.div`
   position: absolute;
@@ -191,13 +71,15 @@ export const SectionTwo = styled.div`
   z-index: 15;
 `;
 
-export const SectionTwoContent = styled.div`
-  width: 900px;
-  height: max-content;
+export const SectionTwoContent = styled.div<{ sectionAtual: boolean }>`
+  max-width: 100%;
+  max-height: 90%;
+  height: 450px;
   margin: 50px;
 
   h1 {
-    animation: ${spaceInDown} 3s;
+    animation: ${({ sectionAtual }) =>
+      sectionAtual ? "${spaceInDown} 3s" : "none"};
   }
 `;
 
@@ -207,10 +89,15 @@ export const TypingEffect = styled.span`
   font-size: 48px;
   border-right: 3px solid #000; /* Adapte a cor e a largura da borda conforme necessário */
   white-space: nowrap;
-  animation: ${typing} 4s steps(50); /* Ajuste a duração da animação conforme necessário */
 `;
 
-export const SubText = styled.h2`
+export const SubText = styled.p`
   color: ${theme.colors.primary.color100};
   text-align: start;
-`
+`;
+
+export const SectionAtual = styled.div`
+  &.animate {
+    animation: ${boingInUp} 1s ease-in-out;
+  }
+`;
