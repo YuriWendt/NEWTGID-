@@ -1,122 +1,68 @@
-import { useEffect, useRef } from "react";
+import { useState } from "react";
+import { useInView } from 'react-intersection-observer';
 import { Sections } from "../../components/sections";
 import { theme } from "../../globals/theme";
 import { AboutUs } from '../about';
 import { ContactUs } from '../contact';
+import { Digital } from "../digital";
 import { First } from '../first';
 import { StyledContainer } from "../first/styles";
 import { Products } from '../product';
-import { SectionAtual, SectionTwoContent, SubText, TypingEffect } from "./style";
+import { Icons, IconsStyle, Line } from "./style";
+import { FaHandsHelping } from "react-icons/fa"
+import { RiContactsFill } from "react-icons/ri"
 
 export function Home() {
 
-    const section1Ref = useRef<HTMLDivElement>(null);
-    const section2Ref = useRef<HTMLDivElement>(null);
-    const section3Ref = useRef<HTMLDivElement>(null);
-    const section4Ref = useRef<HTMLDivElement>(null);
-    const section5Ref = useRef<HTMLDivElement>(null);
+    const [inViewer, setInViewer] = useState(false);
+    const { ref, inView } = useInView({
+        threshold: 0,
+        rootMargin: '-100px 0px',
+    });
 
-    useEffect(() => {
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, options);
-
-        const section1Node = section1Ref.current;
-        const section2Node = section2Ref.current;
-        const section3Node = section3Ref.current;
-        const section4Node = section4Ref.current;
-        const section5Node = section5Ref.current;
-
-        if (section1Node) {
-            observer.observe(section1Node);
-        }
-        if (section2Node) {
-            observer.observe(section2Node);
-        }
-        if (section3Node) {
-            observer.observe(section3Node);
-        }
-        if (section4Node) {
-            observer.observe(section4Node);
-        }
-        if (section5Node) {
-            observer.observe(section5Node);
-        }
-
-        return () => {
-            if (section1Node) {
-                observer.unobserve(section1Node);
-            }
-            if (section2Node) {
-                observer.unobserve(section2Node);
-            }
-            if (section3Node) {
-                observer.unobserve(section3Node);
-            }
-            if (section4Node) {
-                observer.unobserve(section4Node);
-            }
-            if (section5Node) {
-                observer.unobserve(section5Node);
-            }
-        };
-    }, [section1Ref, section2Ref, section3Ref, section4Ref, section5Ref]);
+    if (inView) {
+        setInViewer(true);
+    }
 
     return (
         <>
-            <SectionAtual ref={section1Ref}>
-                <Sections id="section1" ref={section1Ref}>
-                    <First />
-                </Sections>
-            </SectionAtual>
+            <Sections id="section1" ref={ref}>
+                <First />
+            </Sections>
 
-            <SectionAtual ref={section2Ref}>
-                <Sections
-                    id="section2"
-                    background={{
-                        backgroundImage: `url(${theme.img.bannerTgid})`,
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat'
-                    }}
-                    ref={section2Ref}
-                >
-                    <StyledContainer >
-                        <SectionTwoContent sectionAtual>
-                            <TypingEffect>
-                                TRANSFORME-SE EM DIGITAL
-                            </TypingEffect>
-                            <SubText>Colocar uma ideia inovadora em prática pode ser desafiador, mas você não precisa enfrentar esse processo sozinho!
-                                Nós somos uma fábrica de startups dedicada a ajudar empreendedores a tirarem seus projetos do papel de maneira eficiente e rápida,
-                                por meio do planejamento, desenvolvimento de produtos e inserção da sua empresa no mercado.</SubText>
-                        </SectionTwoContent>
-                    </StyledContainer>
-                </Sections>
-            </SectionAtual>
+            <Sections
+                id="section2"
+                background={{
+                    backgroundImage: `url(${theme.img.bannerTgid})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat'
+                }}
+                ref={ref}
+                inViewer={inViewer}
+            >
+                <Digital />
+            </Sections>
 
-            <SectionAtual ref={section3Ref}>
-                <Sections id="section3" to="top" totwo="section3">
+            <Sections id="section3" to="top" totwo="section3">
+                <Line style={{ backgroundImage: 'linear-gradient(#d2a8ff,#a371f7 10%,#196c2e 70%,#2ea043 80%,#56d364)' }} />
+                <StyledContainer>
                     <Products />
-                </Sections >
-            </SectionAtual>
+                </StyledContainer>
+            </Sections >
 
+            <Icons><IconsStyle><FaHandsHelping size={30} /></IconsStyle><FaHandsHelping size={30} /></Icons>
 
-            <Sections id="section4" to="section3" totwo="section4" >
+            <Sections id="section4" >
+                <Line style={{ backgroundImage: 'linear-gradient(#56d364, #727909 10%,#85862d 70%,#b76c1b 80%,#ea6045)' }} />
                 <StyledContainer>
                     <AboutUs />
                 </StyledContainer>
             </Sections>
 
+            <Icons><IconsStyle><RiContactsFill size={30} /></IconsStyle><RiContactsFill size={30} /></Icons>
+
             <Sections id="section5" to="section4" totwo="section4" >
+                <Line style={{ backgroundImage: 'linear-gradient(#ea6045,#791309 10%,#862d2d 70%,#b71b3a 80%,#ff0077)' }} />
                 <StyledContainer>
                     <ContactUs />
                 </StyledContainer>

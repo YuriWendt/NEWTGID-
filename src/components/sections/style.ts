@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SectionWrapper = styled.section`
-  height: 100vh;
+  height: 120vh;
 
   @media screen and (max-width: 768px) {
     height: 100vh;
@@ -12,7 +12,6 @@ export const SectionWrapper = styled.section`
 export const SectionContent = styled.div`
   max-width: 100%;
   padding: 0 16px;
-  text-align: center;
 
   @media screen and (max-width: 768px) {
     padding: 0 8px;

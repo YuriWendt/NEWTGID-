@@ -47,14 +47,15 @@ const boingInUp = keyframes`
 `;
 
 export const ContainerStyled = styled(Container)`
-  width: 100%;
-  height: 100%;
-`
+  text-align: center;
+  display: grid;
+  justify-content: center;
+`;
 
 export const SwiperStyled = styled(Swiper)`
   width: 100%;
-  margin-left: 47%;
   transform: translateX(-50%);
+  margin-left: 50%;
   .swiper-button-prev,
   .swiper-button-next {
     height: 30px;
@@ -74,22 +75,6 @@ export const SwiperStyled = styled(Swiper)`
     font-family: "swiper-icons";
     font-size: 12px;
   }
-
-  @media (max-width: 1280px) {
-    height: 400px;
-  }
-
-  @media (max-width: 1024px) {
-    height: 300px;
-  }
-
-  @media (max-width: 767px) {
-    height: 200px;
-  }
-
-  @media (max-width: 480px) {
-    height: 150px;
-  }
 `;
 
 export const SwiperSlideStyled = styled(SwiperSlide)<{ isSelected: boolean }>`
@@ -98,7 +83,8 @@ export const SwiperSlideStyled = styled(SwiperSlide)<{ isSelected: boolean }>`
   line-height: 300px;
   text-align: center;
   transform: ${({ isSelected }) => (isSelected ? "scale(1.5)" : "none")};
-  transition: ${({ isSelected }) => (isSelected ? "transform 0.3s ease-in-out" : "none")};
+  transition: ${({ isSelected }) =>
+    isSelected ? "transform 0.3s ease-in-out" : "none"};
   z-index: ${({ isSelected }) => (isSelected ? "2" : "1")};
   filter: ${({ isSelected }) => (isSelected ? "none" : "grayscale(100%)")};
 
@@ -141,27 +127,39 @@ export const SwiperContent = styled.div`
   }
 `;
 
-export const Card = styled.div<{ isSelected: boolean; backgroundImage: string; }>`
+export const Card = styled.div<{
+  isSelected: boolean;
+  backgroundImage: string;
+}>`
   max-width: 100%;
   max-height: 300px;
   display: flex;
   width: 1200px;
   height: 300px;
-  margin: 30px 20px 0 20px;
+  margin-top: 30px;
   border-radius: 8px;
   position: relative;
-  ${(props) => (props.isSelected && css`transform: scale(1.05); box-shadow: 0 4px 6px ${theme.colors.primary.color100};`)}
+  ${(props) =>
+    props.isSelected &&
+    css`
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px ${theme.colors.primary.color100};
+    `}
   animation: ${boingInUp} 1s;
   transition: all 0.3s ease-in-out;
   z-index: 5;
 `;
 
-export const CardBackground = styled.div<{ isSelected: boolean; backgroundImage: string;}>`
+export const CardBackground = styled.div<{
+  isSelected: boolean;
+  backgroundImage: string;
+}>`
   width: 1200px;
   height: 300px;
   border-radius: 8px;
   background-color: transparent;
-  background-image: ${({ isSelected, backgroundImage }) => (isSelected ? `url(${backgroundImage})` : "none")};
+  background-image: ${({ isSelected, backgroundImage }) =>
+    isSelected ? `url(${backgroundImage})` : "none"};
   background-size: cover;
   background-repeat: no-repeat;
   transition: all 0.3s ease-in-out;

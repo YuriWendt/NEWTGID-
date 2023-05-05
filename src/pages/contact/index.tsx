@@ -28,7 +28,7 @@ export function ContactUs() {
     }
 
     return (
-        <Container>
+        <Container style={{ textAlign: 'center'}}>
             <GlitchEffect>
                 <Stack index={0} stacks={3}>Entre Contato</Stack>
             </GlitchEffect>

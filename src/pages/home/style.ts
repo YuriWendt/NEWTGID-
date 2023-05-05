@@ -1,7 +1,11 @@
-import styled, { keyframes } from "styled-components";
+import styled, { CSSProperties, keyframes } from "styled-components";
 import "swiper/swiper-bundle.min.css";
 import { Container } from "../../globals/grid";
 import { theme } from "../../globals/theme";
+
+interface LineProps {
+  background: CSSProperties["background"];
+}
 
 const fadeIn = keyframes`
   from {
@@ -11,30 +15,6 @@ const fadeIn = keyframes`
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-`;
-
-const boingInUp = keyframes`
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 50% 0%;
-    transform-origin: 50% 0%;
-    -webkit-transform: perspective(1500px) rotateX(-90deg);
-    transform: perspective(1500px) rotateX(-90deg);
-  }
-  50% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 0%;
-    transform-origin: 50% 0%;
-    -webkit-transform: perspective(1500px) rotateX(50deg);
-    transform: perspective(1500px) rotateX(50deg);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform-origin: 50% 0%;
-    transform-origin: 50% 0%;
-    -webkit-transform: perspective(1500px) rotateX(0deg);
-    transform: perspective(1500px) rotateX(0deg);
   }
 `;
 
@@ -64,40 +44,22 @@ export const ContainerStyled = styled(Container)`
   height: 100%;
 `;
 
-export const SectionTwo = styled.div`
+export const Line = styled.div`
+  width: 4px;
+  height: 115vh !important;
+  left: 5%;
   position: absolute;
-  top: 125%;
-  left: 16.5%;
-  z-index: 15;
 `;
 
-export const SectionTwoContent = styled.div<{ sectionAtual: boolean }>`
+export const Icons = styled.div`
+  position: relative;
   max-width: 100%;
-  max-height: 90%;
-  height: 450px;
-  margin: 50px;
-
-  h1 {
-    animation: ${({ sectionAtual }) =>
-      sectionAtual ? "${spaceInDown} 3s" : "none"};
-  }
+  margin-bottom: 50px;
+  margin-left: 4.5%;
 `;
 
-export const TypingEffect = styled.span`
-  display: grid;
-  overflow: hidden;
-  font-size: 48px;
-  border-right: 3px solid #000; /* Adapte a cor e a largura da borda conforme necessário */
-  white-space: nowrap;
-`;
-
-export const SubText = styled.p`
-  color: ${theme.colors.primary.color100};
-  text-align: start;
-`;
-
-export const SectionAtual = styled.div`
-  &.animate {
-    animation: ${boingInUp} 1s ease-in-out;
-  }
+export const IconsStyle = styled.span`
+  position: absolute;
+  background-color: ${theme.colors.secondary.color100};
+  filter: blur(18px);
 `;
