@@ -1,11 +1,14 @@
-import { CodeBox, SectionTwoContent, StyledContainer, SubText, TypingEffect } from "./styles";
+import { CodeBox, CodeImage, SectionContent, StyledContainer, SubText, TypingEffect } from "./styles";
 
 export function Digital() {
 
     return (
         <>
             <StyledContainer >
-                <SectionTwoContent>
+                <SectionContent>
+                    <CodeBox>
+                        <CodeImage src="https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmlzdWFsJTIwc3R1ZGlvJTIwY29kZXxlbnwwfHwwfHw%3D&w=1000&q=80"></CodeImage>
+                    </CodeBox>
                     <div>
                         <TypingEffect>
                             TRANSFORME-SE EM DIGITAL
@@ -15,10 +18,7 @@ export function Digital() {
                             por meio do planejamento, desenvolvimento de produtos e inserção da sua empresa no mercado.
                         </SubText>
                     </div>
-                    <CodeBox>
-                        <img src="https://images.unsplash.com/photo-1607705703571-c5a8695f18f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dmlzdWFsJTIwc3R1ZGlvJTIwY29kZXxlbnwwfHwwfHw%3D&w=1000&q=80" width={400} height={400}></img>
-                    </CodeBox>
-                </SectionTwoContent>
+                </SectionContent>
             </StyledContainer>
         </>
     )

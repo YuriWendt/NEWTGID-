@@ -70,6 +70,11 @@ export const Logo = styled.img`
   height: 200px;
   animation: ${spaceInRight} 4s;
 
+  @media ${theme.screenSizes.desktop} {
+    width: 150px;
+    height: 150px;
+  }
+
   @media screen and (max-width: 480px) {
     width: 120px;
     height: 120px;
@@ -93,6 +98,10 @@ export const StyledContainer = styled(Container)`
 
 export const GlitchEffect = styled.div`
   position: relative;
+  
+  @media ${theme.screenSizes.desktop} {
+    width: 400px;
+  }
 
   @media screen and (max-width: 768px) {
     width: min-content;
@@ -138,10 +147,10 @@ export const Stick = styled.span`
 `;
 
 export const TextContent = styled.div`
-  max-width: 400px;
   margin-top: 7rem;
   float: right;
   text-align: start;
+  justify-content: end;
   display: grid;
   animation: ${swashIn} 3s forwards;
 
@@ -154,12 +163,12 @@ export const TextContent = styled.div`
     color: ${theme.colors.secondary.color100};
   }
 
-  @media screen and (min-width: 1025px) and (max-width: 1367px) {
-    margin-top: 5rem;
+  @media ${theme.screenSizes.desktop} {
+    margin-top: 1rem;
+    margin-left: 24px;
   }
 `;
 
 export const MoreButtonStyled = styled.div`
-  margin-top: 100px;
-  margin-left: 300px;
+  margin-left: 50%;
 `;

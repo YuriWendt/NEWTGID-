@@ -5,7 +5,7 @@ import { Stack } from "../../effects/glitch/style";
 import { SmallButton } from "../../globals/buttons";
 import { Container, Row } from "../../globals/grid";
 import { useLoader } from "../../hooks/useLoader";
-import { Column, ContentButton, InputContent, StrongLabel, StyledContent, StyledForm, StyledInputMask, TextInput, Wrapper } from "./style";
+import { Column, ContainerStyled, ContentButton, InputContent, StrongLabel, StyledContent, StyledForm, StyledInputMask, TextInput, Wrapper } from "./style";
 import { GlitchEffect } from '../first/styles';
 
 export function ContactUs() {
@@ -28,7 +28,7 @@ export function ContactUs() {
     }
 
     return (
-        <Container style={{ textAlign: 'center'}}>
+        <ContainerStyled>
             <GlitchEffect>
                 <Stack index={0} stacks={3}>Entre Contato</Stack>
             </GlitchEffect>
@@ -105,18 +105,18 @@ export function ContactUs() {
                         </div>
                         <div>
                             <p>
-                            <FontAwesomeIcon icon={faLocationDot} style={{ marginRight: 5 }}/>
+                                <FontAwesomeIcon icon={faLocationDot} style={{ marginRight: 5 }} />
                                 Rua Clodomiro Amazonas
                                 1393 - Conj. 07-A
                                 Vila Nova Conceição, São Paulo - SP
 
-                                <FontAwesomeIcon icon={faEnvelope} style={{ marginRight: 5, marginLeft: 15}}/>
+                                <FontAwesomeIcon icon={faEnvelope} style={{ marginRight: 5, marginLeft: 15 }} />
                                 contato@tgid.com.br
                             </p>
                         </div>
                     </Wrapper>
                 </StyledForm>
             </StyledContent>
-        </Container >
+        </ContainerStyled >
     )
 }

@@ -35,7 +35,7 @@ export function Home() {
                 background={{
                     backgroundImage: `url(${theme.img.bannerTgid})`,
                     backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat'
+                    backgroundRepeat: 'no-repeat',
                 }}
                 ref={ref}
                 inViewer={inViewer}

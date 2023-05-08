@@ -9,7 +9,6 @@ import { theme } from '../../globals/theme';
 import { CardTypes } from '../../types/CardsTypes';
 import { GlitchEffect } from '../first/styles';
 import { Card, CardBackground, CardContent, ContainerStyled, LogoCard, SwiperContent, SwiperSlideStyled, SwiperStyled } from "./style";
-import { Container } from '../../globals/grid';
 
 
 export function Products() {
@@ -27,7 +26,7 @@ export function Products() {
         <>
             <ContainerStyled>
                 <div style={{ paddingTop: 50 }}>
-                    <GlitchEffect>
+                    <GlitchEffect style={{ width: '100%'}}>
                         <Stack index={0} stacks={3}>Nossos Produtos</Stack>
                     </GlitchEffect>
                 </div>
@@ -43,9 +42,17 @@ export function Products() {
                 </div>
                 <ContainerStyled>
                     <SwiperStyled
+                        breakpoints={{
+                            1024: {
+                                width: 900,
+                            },
+                            768: {
+                                width: 500,
+                            }
+                        }}
                         slidesPerView={3}
                         centeredSlides={true}
-                        spaceBetween={30}
+                        spaceBetween={-50}
                         pagination={{
                             type: "custom",
                         }}

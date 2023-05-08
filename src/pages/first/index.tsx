@@ -2,7 +2,7 @@ import { MoreButton } from "../../components/more-button";
 import { Stack } from "../../effects/glitch/style";
 import { Row } from "../../globals/grid";
 import { theme } from "../../globals/theme";
-import { GlitchEffect, Line, Logo, MoreButtonStyled, SectionWrapper, StyledContainer, TextContent } from "./styles";
+import { GlitchEffect, Logo, MoreButtonStyled, SectionWrapper, StyledContainer, TextContent } from "./styles";
 
 
 export function First() {

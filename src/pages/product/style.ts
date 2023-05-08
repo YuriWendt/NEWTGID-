@@ -53,20 +53,24 @@ export const ContainerStyled = styled(Container)`
 `;
 
 export const SwiperStyled = styled(Swiper)`
-  width: 100%;
-  transform: translateX(-50%);
-  margin-left: 50%;
-  .swiper-button-prev,
-  .swiper-button-next {
-    height: 30px;
-    width: 30px;
-    background-color: ${theme.colors.secondary.color100};
-    border-radius: 50%;
-    color: ${theme.colors.primary.color100};
-    font-size: 24px;
-    z-index: 10;
-    &:hover {
-      transform: scale(1.3);
+  @media ${theme.screenSizes.desktop} {
+    width: 900px;
+    height: 200px;
+    position: absolute;
+    transform: translateX(-50%);
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      height: 30px;
+      width: 30px;
+      background-color: ${theme.colors.secondary.color100};
+      border-radius: 50%;
+      color: ${theme.colors.primary.color100};
+      font-size: 24px;
+      z-index: 10;
+      &:hover {
+        transform: scale(1.3);
+      }
     }
   }
 
@@ -75,55 +79,40 @@ export const SwiperStyled = styled(Swiper)`
     font-family: "swiper-icons";
     font-size: 12px;
   }
+
+  @media ${theme.screenSizes.smallScreen} {
+    display: grid;
+    width: 200px;
+  }
 `;
 
 export const SwiperSlideStyled = styled(SwiperSlide)<{ isSelected: boolean }>`
-  margin-top: 100px;
-  height: 200px;
-  line-height: 300px;
-  text-align: center;
-  transform: ${({ isSelected }) => (isSelected ? "scale(1.5)" : "none")};
-  transition: ${({ isSelected }) =>
-    isSelected ? "transform 0.3s ease-in-out" : "none"};
-  z-index: ${({ isSelected }) => (isSelected ? "2" : "1")};
-  filter: ${({ isSelected }) => (isSelected ? "none" : "grayscale(100%)")};
 
-  @media (max-width: 1280px) {
-    height: 400px;
-  }
-
-  @media (max-width: 1024px) {
-    height: 300px;
-  }
-
-  @media (max-width: 767px) {
-    height: 200px;
-  }
-
-  @media (max-width: 480px) {
-    height: 150px;
+  @media ${theme.screenSizes.desktop} {
+    margin-top: 100px;
+    height: 180px;
+    line-height: 100px;
+    text-align: center;
+    transform: ${({ isSelected }) => (isSelected ? "scale(1.5)" : "none")};
+    transition: ${({ isSelected }) =>
+      isSelected ? "transform 0.3s ease-in-out" : "none"};
+    z-index: ${({ isSelected }) => (isSelected ? "2" : "1")};
+    filter: ${({ isSelected }) => (isSelected ? "none" : "grayscale(100%)")};
   }
 `;
 
 export const SwiperContent = styled.div`
-  position: relative;
+  position: absolute;
   z-index: 1;
   text-align: center;
+  justify-content: center;
 
   img {
-    width: 50%;
+    width: 100px;
     object-fit: cover;
-    top: 50px;
-    left: 25%;
+    top: 10%;
+    left: 35%;
     position: absolute;
-  }
-
-  svg.swiper-slide-background {
-    image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 `;
 
@@ -131,14 +120,11 @@ export const Card = styled.div<{
   isSelected: boolean;
   backgroundImage: string;
 }>`
-  max-width: 100%;
-  max-height: 300px;
   display: flex;
-  width: 1200px;
-  height: 300px;
+  width: 800px;
+  height: 200px;
   margin-top: 30px;
   border-radius: 8px;
-  position: relative;
   ${(props) =>
     props.isSelected &&
     css`
@@ -155,7 +141,7 @@ export const CardBackground = styled.div<{
   backgroundImage: string;
 }>`
   width: 1200px;
-  height: 300px;
+  height: 200px;
   border-radius: 8px;
   background-color: transparent;
   background-image: ${({ isSelected, backgroundImage }) =>
@@ -174,7 +160,8 @@ export const LogoCard = styled.div`
 
   img {
     width: 250px;
-    height: 200px;
+    height: 150px;
+    overflow: hidden;
   }
 `;
 

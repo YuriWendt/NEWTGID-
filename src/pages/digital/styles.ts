@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import { Container } from "../../globals/grid";
 import { theme } from "../../globals/theme";
 
 const boingInUp = keyframes`
@@ -26,27 +25,23 @@ const boingInUp = keyframes`
   }
 `;
 
-export const StyledContainer = styled(Container)`
-  display: flex;
-  height: 100%;
-  padding: 4rem;
-
-  @media screen and (max-width: 768px) {
-    display: grid;
-    padding: 2rem;
-    text-align: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+export const StyledContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
-export const SectionTwoContent = styled.div`
+export const SectionContent = styled.div`
+  max-width: 700px;
+  width: 100%;
+  height: 200px;
   display: flex;
+  position: relative;
   background-color: ${theme.colors.black.color100};
   border: 1 solid ${theme.colors.primary.color60};
   border-radius: 8px;
-  padding: 128px 0px 64px 64px !important;
+  padding: 64px 64px 64px 64px !important;
   box-shadow: 9px 24px 40px 25px ${theme.colors.primary.color100};
 `;
 
@@ -56,18 +51,27 @@ export const TypingEffect = styled.span`
   font-size: 48px;
   border-right: 3px solid #000; /* Adapte a cor e a largura da borda conforme necessário */
   white-space: nowrap;
+
+  @media ${theme.screenSizes.desktop} {
+    font-size: 24px;
+  }
 `;
 
 export const SubText = styled.p`
   text-align: start;
 `;
 
-export const SectionAtual = styled.div`
-  &.animate {
-    animation: ${boingInUp} 1s ease-in-out;
-  }
+export const CodeBox = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
 
-export const CodeBox = styled.div`
+export const CodeImage = styled.img`
+  object-fit: cover;
+  overflow: hidden;
+  opacity: 0.4;
   mask-image: linear-gradient(-90deg, black 50%, transparent 100%);
+  height: 300px;
+  float: right;
 `;

@@ -26,6 +26,7 @@ import BannerLogtrackPng from '../assets/logtrack/banner-logtrack.jpg'
 import BannerSafewayPng from '../assets/safeway/banner-2.webp'
 import BannerArckpayPng from '../assets/arckpay/banneraarckpay.png'
 import Btnext from '../assets/bt_arrow.png'
+import About from '../assets/about.png'
 
 
 export const theme = {
@@ -112,6 +113,7 @@ export const theme = {
         AppSafeway: AppSafeway,
         AppArckpay: AppArckpay,
         BtNext: Btnext,
+        About: About,
     },
     icon: {
     },

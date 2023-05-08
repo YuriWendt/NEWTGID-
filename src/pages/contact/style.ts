@@ -3,6 +3,7 @@ import { Label } from "../../globals/texts";
 import { theme } from "../../globals/theme";
 import { Input } from "../../globals/forms";
 import { GridProps } from "../../types/GridTypes";
+import { Container } from "../../globals/grid";
 
 const LeftAnimation = keyframes`
   0% {
@@ -110,6 +111,12 @@ const TopAnimation = keyframes`
   100% {
     transform: translate(0%);
   }
+`;
+
+export const ContainerStyled = styled(Container)`
+  text-align: center;
+  display: grid;
+  justify-items: center;
 `;
 
 export const StyledContent = styled.div`

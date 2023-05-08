@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { theme } from "../../globals/theme";
 
 export const stackAnimation = keyframes`
   0% {
@@ -54,7 +55,7 @@ export const Stack = styled.span<{ index: number; stacks: number }>`
     align-items: center;
   }
 
-  @media screen and (min-width: 1200px) and (max-width: 1365px) {
+  @media ${theme.screenSizes.desktop} {
     margin: 5px;
     font-size: 50px;
     text-align: center;

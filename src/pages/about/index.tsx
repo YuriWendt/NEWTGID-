@@ -4,7 +4,7 @@ import { useLoader } from "../../hooks/useLoader";
 import { MoreButton } from "../../components/more-button";
 import { theme } from "../../globals/theme";
 import { Stack } from "../../effects/glitch/style";
-import { StyledContent } from "./style";
+import { Objetive, StyledContainer, StyledContent, SubObjetive } from "./style";
 import { GlitchEffect } from "../first/styles";
 
 export function AboutUs() {
@@ -24,7 +24,19 @@ export function AboutUs() {
                 <Stack index={0} stacks={3}>QUEM SOMOS</Stack>
             </GlitchEffect>
             <StyledContent>
-                <div>
+                <Objetive>
+                    <SubObjetive>
+                        <p>Para ajudar empreendedores a tirar projetos do papel, a TGID oferece ampla experiência em startups, com uma equipe altamente qualificada em diversas áreas empresariais.
+                            Nós ajudamos você a construir seu produto e lançar sua empresa no mercado de forma rápida e eficiente. Transforme-se e cresça na era digital conosco!</p>
+                            <StyledContainer>QUALIDADE</StyledContainer>
+                            <StyledContainer>AGILIDADE</StyledContainer>
+                            <StyledContainer>EFICIÊNCIA</StyledContainer>
+                    </SubObjetive>
+                    <SubObjetive>
+                        <img src={`${theme.img.About}`}></img>
+                    </SubObjetive>
+                </Objetive>
+                {/* <div>
                     <img src={`${theme.img.team}`} style={{
                         width: 700,
                         height: 500,
@@ -32,11 +44,8 @@ export function AboutUs() {
                         border: `solid 2px ${theme.colors.secondary.color100}`,
                         borderRadius: 8
                     }}></img>
-                </div>
+                </div> */}
 
-                    <p>Com o propósito de ajudar empreendedores a tirar seus projetos do papel, contando com ampla experiência nas necessidades do mercado de startups, nasceu a TGID. Temos uma equipe altamente qualificada, atuante nas mais variadas áreas empresariais, com o intuito de ajudar você a construir o seu produto e a colocar sua empresa no mercado de forma rápida e eficiente.
-
-                        Transforme-se e cresça na era digital, venha fazer parte do nosso ecossistema.</p>
             </StyledContent>
         </Container >
     )

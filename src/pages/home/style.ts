@@ -46,7 +46,7 @@ export const ContainerStyled = styled(Container)`
 
 export const Line = styled.div`
   width: 4px;
-  height: 115vh !important;
+  height: 100% !important;
   left: 5%;
   position: absolute;
 `;
@@ -54,8 +54,7 @@ export const Line = styled.div`
 export const Icons = styled.div`
   position: relative;
   max-width: 100%;
-  margin-bottom: 50px;
-  margin-left: 4.5%;
+  left: 4%;
 `;
 
 export const IconsStyle = styled.span`
