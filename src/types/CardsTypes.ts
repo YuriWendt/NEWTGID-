@@ -12,8 +12,7 @@ export const CardTypes = [
   {
     id: 2,
     title: "SafeWay",
-    description:
-      "Plataforma de pagamentos on-line que permite você realizar transações de forma prática e segura.",
+    description: "Plataforma de pagamentos on-line que permite você realizar transações de forma prática e segura.",
     image: `${theme.img.safewaylogo}`,
     banner: `${theme.img.bannerSafeway}`,
     app: `${theme.img.AppSafeway}`,

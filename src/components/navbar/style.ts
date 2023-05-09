@@ -46,10 +46,16 @@ export const Content = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 80px;
+  width: 140px;
   height: 80px;
   z-index: 0;
 
+  @media (max-width: 768px) {
+  }
+`;
+
+export const TextLogo = styled.h1`
+  font-family: 'Helvetica', 'Arial', sans-serif;
   @media (max-width: 768px) {
   }
 `;

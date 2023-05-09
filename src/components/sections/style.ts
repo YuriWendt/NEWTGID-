@@ -5,7 +5,7 @@ export const SectionWrapper = styled.section`
   height: 100vh;
 
   @media screen and (max-width: 768px) {
-    height: 100vh;
+    height: 110vh;
     padding-top: 64px;
   }
 `;

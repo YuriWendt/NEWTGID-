@@ -44,17 +44,19 @@ export const ContainerStyled = styled(Container)`
   height: 100%;
 `;
 
-export const Line = styled.div`
-  width: 4px;
-  height: 100% !important;
-  left: 5%;
+export const ContainerLine = styled.div`
+  display: grid;
+  align-items: center;
   position: absolute;
+  left: 3%;
+  top: 0;
+  bottom: 0;
 `;
 
-export const Icons = styled.div`
-  position: relative;
-  max-width: 100%;
-  left: 4%;
+
+export const Line = styled.div`
+  width: 4px;
+  height: 100%;
 `;
 
 export const IconsStyle = styled.span`

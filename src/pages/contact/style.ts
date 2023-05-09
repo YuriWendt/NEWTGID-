@@ -4,6 +4,7 @@ import { theme } from "../../globals/theme";
 import { Input } from "../../globals/forms";
 import { GridProps } from "../../types/GridTypes";
 import { Container } from "../../globals/grid";
+import { GlitchEffect } from "../first/styles";
 
 const LeftAnimation = keyframes`
   0% {
@@ -110,6 +111,15 @@ const TopAnimation = keyframes`
   }
   100% {
     transform: translate(0%);
+  }
+`;
+
+export const GlitchEffectStyled = styled(GlitchEffect)`
+  margin-bottom: 60px;
+  @media ${theme.screenSizes.mobile} {
+    margin-bottom: 100px;
+    visibility: visible;
+    height: none;
   }
 `;
 

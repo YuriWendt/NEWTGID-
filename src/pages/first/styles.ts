@@ -58,99 +58,75 @@ const swashIn = keyframes`
   }
 `;
 
-
 export const SectionWrapper = styled.section`
-  width: 100%;
-  height: 100%;
-`;
+  position: absolute;
+  margin-top: 80px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
 
-export const Logo = styled.img`
-  z-index: 0;
-  width: 200px;
-  height: 200px;
-  animation: ${spaceInRight} 4s;
-
-  @media ${theme.screenSizes.desktop} {
-    width: 150px;
-    height: 150px;
-  }
-
-  @media screen and (max-width: 480px) {
-    width: 120px;
-    height: 120px;
+   @media ${theme.screenSizes.mobile} {
+    top: 40%;
   }
 `;
 
 export const StyledContainer = styled(Container)`
   display: flex;
-  height: 100%;
-  padding: 5rem;
+  max-width: 100%;
 
-  @media screen and (max-width: 768px) {
+  @media ${theme.screenSizes.mobile} {
     display: grid;
-    padding: 2rem;
-    text-align: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
   }
 `;
+
+export const Logo = styled.img`
+  z-index: 0;
+  width: 400px;
+  height: 120px;
+  animation: ${spaceInRight} 4s;
+  margin-top: 30px;
+
+  @media ${theme.screenSizes.desktop} {
+    width: 250px;
+    height: 150px;
+  }
+
+  @media ${theme.screenSizes.tablet} {
+    width: 200px;
+    height: 100px;
+  }
+
+  @media ${theme.screenSizes.mobile} {
+    width: 230px;
+    height: 150px;
+    margin-top: 10px;
+  }
+`;
+
 
 export const GlitchEffect = styled.div`
   position: relative;
-  
-  @media ${theme.screenSizes.desktop} {
-    width: 400px;
+  display: grid;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  float: left;
+
+  @media ${theme.screenSizes.tablet} {
+    margin-right: 5rem;
   }
 
-  @media screen and (max-width: 768px) {
-    width: min-content;
-    text-align: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-
-export const Stick = styled.span`
-  width: 3px;
-  height: 500px;
-  background: ${theme.colors.secondary.color100};
-  position: absolute;
-  margin: 3rem;
-  right: 50%;
-  top: 20%;
-
-  @media screen and (max-width: 767px) {
-    width: 300px;
-    height: 3px;
-    margin: 0;
-    position: absolute;
-    right: 10%;
-    top: 50%;
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1024px) {
-    width: 500px;
-    height: 3px;
-    margin: 0;
-    position: absolute;
-    right: 20%;
-    top: 50%;
-  }
-
-  @media screen and (min-width: 1025px) and (max-width: 1366px) {
-    position: absolute;
-    right: 49%;
-    top: 10%;
+  @media ${theme.screenSizes.mobile} {
+    visibility: hidden;
+    height: 0;
   }
 `;
 
 export const TextContent = styled.div`
-  margin-top: 7rem;
   float: right;
   text-align: start;
-  justify-content: end;
+  justify-content: right;
   display: grid;
   animation: ${swashIn} 3s forwards;
 
@@ -164,11 +140,37 @@ export const TextContent = styled.div`
   }
 
   @media ${theme.screenSizes.desktop} {
-    margin-top: 1rem;
     margin-left: 24px;
+  }
+
+  @media ${theme.screenSizes.tablet} {
+    margin-left: 24px;
+   h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 20px;
+  }
+  }
+
+   @media ${theme.screenSizes.mobile} {
+    margin-left: 50px;
+   h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 15px;
+  }
   }
 `;
 
 export const MoreButtonStyled = styled.div`
-  margin-left: 50%;
+  margin-left: 30%;
+  width: 100%;
+
+  @media ${theme.screenSizes.mobile} {
+    margin-left: 15%;
+  }
 `;

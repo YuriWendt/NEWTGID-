@@ -5,7 +5,7 @@ import { Stack } from "../../effects/glitch/style";
 import { SmallButton } from "../../globals/buttons";
 import { Container, Row } from "../../globals/grid";
 import { useLoader } from "../../hooks/useLoader";
-import { Column, ContainerStyled, ContentButton, InputContent, StrongLabel, StyledContent, StyledForm, StyledInputMask, TextInput, Wrapper } from "./style";
+import { Column, ContainerStyled, ContentButton, GlitchEffectStyled, InputContent, StrongLabel, StyledContent, StyledForm, StyledInputMask, TextInput, Wrapper } from "./style";
 import { GlitchEffect } from '../first/styles';
 
 export function ContactUs() {
@@ -29,9 +29,9 @@ export function ContactUs() {
 
     return (
         <ContainerStyled>
-            <GlitchEffect>
+            <GlitchEffectStyled style={{ width: '100%', marginTop: 100, marginBottom: 30 }}>
                 <Stack index={0} stacks={3}>Entre Contato</Stack>
-            </GlitchEffect>
+            </GlitchEffectStyled>
             <StyledContent>
                 <StyledForm>
                     <form>

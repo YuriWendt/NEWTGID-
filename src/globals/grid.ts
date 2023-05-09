@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-   
     padding: 0 15px;
     margin: 0 auto;
     box-sizing: border-box;

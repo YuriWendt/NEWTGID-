@@ -1,8 +1,8 @@
 import LogoPng from '../assets/logo.png'
 import LogoWhitePng from '../assets/logo-white.png'
-import LogoTextPng from '../assets/logo-name.png'
+import LogoWhiteNamePng from '../assets/logowhite-name.png'
+import LogoNamePng from '../assets/logo-name.png'
 import BackgroundGradientPng from '../assets/backgroundgradient.png'
-import BackgroundCardPng from '../assets/backgroundCard.png'
 import SafeWayLogo from '../assets/safeway.png'
 import DesconfieLogo from '../assets/desconfieja.png'
 import LevelLogo from '../assets/level.png'
@@ -10,7 +10,7 @@ import BlbrokersLogo from '../assets/blbrokers.png'
 import ArckpayLogo from '../assets/arckpay.png'
 import LogtrackLogo from '../assets/logtrack.png'
 import BannerTGIDPng from '../assets/bannertgid.png'
-import Team from '../assets/team.jpeg'
+import BannerGrayPng from '../assets/bannergray.png'
 import CardBorder from '../assets/bt.png'
 import CardBorderSelected from '../assets/bt_selected.png'
 import AppSafeway from '../assets/safeway/computer.png'
@@ -84,7 +84,8 @@ export const theme = {
         //LOGOS
         logo: LogoPng,
         logoWhite: LogoWhitePng,
-        logoText: LogoTextPng,
+        logoWhiteName: LogoWhiteNamePng,
+        logoName: LogoNamePng,
         safewaylogo: SafeWayLogo,
         Logtrack: LogtrackLogo,
         descofielogo: DesconfieLogo,
@@ -97,13 +98,13 @@ export const theme = {
         backgroundCardSelected: CardBorderSelected,
         //Banners
         bannerTgid: BannerTGIDPng,
+        bannerGray: BannerGrayPng,
         bannerBlbrockers: BannerBlbrockersPng,
         bannerDescomplica: BannerDescomplicaPng,
         bannerLevel: BannerLevelPng,
         bannerLogtrack: BannerLogtrackPng,
         bannerSafeway: BannerSafewayPng,
         bannerArckpay: BannerArckpayPng,
-        team: Team,
         //Randoms
         borderCard: CardBorder,
         AppBlbrockers: AppBlbrockers,

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineMenu } from 'react-icons/ai';
 import { useNavigate } from "react-router-dom";
 import { theme } from "../../globals/theme";
-import { ButtomMobile, Content, Items, List, Logo, MenuContainer, StyledContainer, SubList } from "./style";
+import { ButtomMobile, Content, Items, List, Logo, MenuContainer, StyledContainer, SubList, TextLogo } from "./style";
 
 type RouteType = {
     name: string,
@@ -85,8 +85,7 @@ export function Navbar() {
         <>
             <StyledContainer id="top">
                 <Content onClick={() => redirect('/')} style={{ cursor: 'pointer' }}>
-                    <Logo src={theme.img.logoWhite} />
-                    <h1>TGID</h1>
+                    <Logo src={theme.img.logoWhiteName} />
                 </Content>
                 <ButtomMobile onClick={() => toggleMenu()}><AiOutlineMenu style={{ width: 50, height: 50, padding: 10 }} /></ButtomMobile>
                 <MenuContainer isMobile={isMobile}>

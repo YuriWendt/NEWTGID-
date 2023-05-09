@@ -9,11 +9,11 @@ export function First() {
     return (
         <SectionWrapper id="section1">
             <StyledContainer>
-                <Row>
-                    <Logo src={theme.img.logoWhite} />
+                <Row style={{ marginRight: 50 }}>
+                    <Logo src={theme.img.logoWhiteName} />
                     <GlitchEffect>
                         <Stack index={0} stacks={3}>Transform</Stack>
-                        <Stack index={1} stacks={3}>and glow</Stack>
+                        <Stack index={1} stacks={3}>and grow</Stack>
                         <Stack index={2} stacks={3}>in digital</Stack>
                     </GlitchEffect>
                 </Row>

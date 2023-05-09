@@ -33,11 +33,13 @@ export const glitchAnimation = keyframes`
 `;
 
 export const Stack = styled.span<{ index: number; stacks: number }>`
-  margin: 1rem;
+  margin: 5px;
   font-weight: bold;
-  grid-row-start: 1;
-  grid-column-start: 1;
-  font-size: 4rem;
+  font-size: 50px;
+  text-align: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   --stack-height: calc(100% / ${(props) => props.stacks} - 1px);
   --clip-top: calc(var(1) * ${(props) => props.index});
   --clip-bottom: calc(var(1) * var(--inverse-index));
@@ -46,22 +48,7 @@ export const Stack = styled.span<{ index: number; stacks: number }>`
       backwards calc(${(props) => props.index} * 120ms),
     ${glitchAnimation} 2s ease infinite 1s alternate-reverse;
 
-  @media screen and (max-width: 768px) {
-    margin: 5px;
-    font-size: 50px;
-    text-align: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  @media ${theme.screenSizes.mobile} {
+    font-size: 2rem;
   }
-
-  @media ${theme.screenSizes.desktop} {
-    margin: 5px;
-    font-size: 50px;
-    text-align: center;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
 `;
