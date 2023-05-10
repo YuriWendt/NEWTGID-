@@ -73,6 +73,7 @@ export const StyledContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 80px;
 
   @media ${theme.screenSizes.mobile} {
     display: grid;
@@ -142,6 +143,8 @@ export const TextContent = styled.div`
   justify-content: end;
   display: grid;
   animation: ${swashIn} 3s forwards;
+  width: 300px;
+  margin-left: 300px;
 
   h1 {
     font-size: 50px;
@@ -153,11 +156,12 @@ export const TextContent = styled.div`
   }
 
   @media ${theme.screenSizes.desktop} {
-    margin-left: 24px;
+    margin-left: 200px;
   }
 
   @media ${theme.screenSizes.tablet} {
-    margin-left: 24px;
+    margin-left: 100px;
+    width: 100px;
     h1 {
       font-size: 30px;
     }
@@ -168,7 +172,7 @@ export const TextContent = styled.div`
   }
 
   @media ${theme.screenSizes.mobile} {
-    margin-left: 50px;
+    margin-left: 10px;
     h1 {
       font-size: 30px;
     }
