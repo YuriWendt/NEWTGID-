@@ -48,6 +48,14 @@ export const Stack = styled.span<{ index: number; stacks: number }>`
       backwards calc(${(props) => props.index} * 120ms),
     ${glitchAnimation} 2s ease infinite 1s alternate-reverse;
 
+  @media ${theme.screenSizes.desktop} {
+    font-size: 2rem;
+  }
+
+  @media ${theme.screenSizes.tablet} {
+    font-size: 2rem;
+  }
+
   @media ${theme.screenSizes.mobile} {
     font-size: 2rem;
   }

@@ -160,6 +160,17 @@ export const SwiperStyled = styled(Swiper)`
 `;
 
 export const SwiperSlideStyled = styled(SwiperSlide)<{ isSelected: boolean }>`
+  @media ${theme.screenSizes.bigScreen} {
+    margin-top: 100px;
+    height: 180px;
+    line-height: 100px;
+    text-align: center;
+    transform: ${({ isSelected }) => (isSelected ? "scale(1.5)" : "none")};
+    transition: ${({ isSelected }) =>
+      isSelected ? "transform 0.3s ease-in-out" : "none"};
+    z-index: ${({ isSelected }) => (isSelected ? "2" : "1")};
+    filter: ${({ isSelected }) => (isSelected ? "none" : "grayscale(100%)")};
+  }
   @media ${theme.screenSizes.desktop} {
     margin-top: 100px;
     height: 180px;
@@ -190,12 +201,18 @@ export const SwiperContent = styled.div`
 export const SwiperProductsImage = styled.img`
   width: 125px;
   object-fit: cover;
-  top: 15%;
-  left: 35%;
+  top: 20%;
+  left: 37%;
   position: absolute;
+/* 
+  @media ${theme.screenSizes.desktop} {
+    top: 20%;
+    left: 33%;
+  } */
 
   @media ${theme.screenSizes.tablet} {
     top: 20%;
+    left: 30%;
   }
 `;
 

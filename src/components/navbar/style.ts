@@ -67,7 +67,7 @@ export const Text = styled.p`
   overflow: hidden;
 
   :hover {
-    color: ${theme.colors.secondary.color100};
+    color: ${theme.colors.primary.color100};
     text-shadow: none;
     cursor: pointer;
   }
@@ -80,9 +80,7 @@ export const MenuContainer = styled.div<{ isMobile: boolean }>`
     width: max-content;
     display: ${({ isMobile }) => (isMobile ? "block" : "none")};
     border-radius: 3px;
-    border-bottom: 2px solid ${theme.colors.secondary.color100};
-    border-left: 2px solid ${theme.colors.secondary.color100};
-    background: ${theme.colors.white};
+    background: linear-gradient(200deg, #a8812d, #fff);
     color: black;
     position: absolute;
     height: 400px;

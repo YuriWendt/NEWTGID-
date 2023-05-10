@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { Container } from "../../globals/grid";
+import { Container, Row } from "../../globals/grid";
 import { theme } from "../../globals/theme";
 
 const spaceInDown = keyframes`
@@ -60,22 +60,32 @@ const swashIn = keyframes`
 
 export const SectionWrapper = styled.section`
   position: absolute;
-  margin-top: 80px;
   top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
 
-   @media ${theme.screenSizes.mobile} {
+  @media ${theme.screenSizes.mobile} {
     top: 40%;
   }
 `;
 
 export const StyledContainer = styled(Container)`
   display: flex;
-  max-width: 100%;
+  justify-content: space-between;
+  width: 100%;
 
   @media ${theme.screenSizes.mobile} {
     display: grid;
+  }
+`;
+
+export const DivStyled = styled.div`
+  width: 100%;
+  margin-right: 100px;
+  align-items: center;
+
+  @media ${theme.screenSizes.mobile} {
+    margin-right: 0;
   }
 `;
 
@@ -85,6 +95,11 @@ export const Logo = styled.img`
   height: 120px;
   animation: ${spaceInRight} 4s;
   margin-top: 30px;
+
+  @media ${theme.screenSizes.bigScreen} {
+    width: 350px;
+    height: 200px;
+  }
 
   @media ${theme.screenSizes.desktop} {
     width: 250px;
@@ -97,12 +112,11 @@ export const Logo = styled.img`
   }
 
   @media ${theme.screenSizes.mobile} {
-    width: 230px;
+    width: 250px;
     height: 150px;
     margin-top: 10px;
   }
 `;
-
 
 export const GlitchEffect = styled.div`
   position: relative;
@@ -111,7 +125,6 @@ export const GlitchEffect = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  float: left;
 
   @media ${theme.screenSizes.tablet} {
     margin-right: 5rem;
@@ -124,9 +137,9 @@ export const GlitchEffect = styled.div`
 `;
 
 export const TextContent = styled.div`
-  float: right;
+  float: end;
   text-align: start;
-  justify-content: right;
+  justify-content: end;
   display: grid;
   animation: ${swashIn} 3s forwards;
 
@@ -145,30 +158,29 @@ export const TextContent = styled.div`
 
   @media ${theme.screenSizes.tablet} {
     margin-left: 24px;
-   h1 {
-    font-size: 30px;
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      font-size: 20px;
+    }
   }
 
-  p {
-    font-size: 20px;
-  }
-  }
-
-   @media ${theme.screenSizes.mobile} {
+  @media ${theme.screenSizes.mobile} {
     margin-left: 50px;
-   h1 {
-    font-size: 30px;
-  }
+    h1 {
+      font-size: 30px;
+    }
 
-  p {
-    font-size: 15px;
-  }
+    p {
+      font-size: 15px;
+    }
   }
 `;
 
 export const MoreButtonStyled = styled.div`
-  margin-left: 30%;
-  width: 100%;
+  margin-left: 15%;
 
   @media ${theme.screenSizes.mobile} {
     margin-left: 15%;
