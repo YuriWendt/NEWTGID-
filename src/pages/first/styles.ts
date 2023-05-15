@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
-import { Container, Row } from "../../globals/grid";
+import { Container } from "../../globals/grid";
 import { theme } from "../../globals/theme";
+import tw from "tailwind-styled-components";
 
 const spaceInDown = keyframes`
   0% {
@@ -56,6 +57,12 @@ const swashIn = keyframes`
     transform-origin: 50% 50%;
     transform: scale(1, 1);
   }
+`;
+
+export const Div = tw.div`
+  grid-flow-col
+  w-1/3
+  ml-10
 `;
 
 export const SectionWrapper = styled.section`
@@ -137,14 +144,10 @@ export const GlitchEffect = styled.div`
   }
 `;
 
-export const TextContent = styled.div`
-  float: end;
-  text-align: start;
-  justify-content: end;
-  display: grid;
+
+export const TextContentS = styled.div`
   animation: ${swashIn} 3s forwards;
-  width: 300px;
-  margin-left: 300px;
+
 
   h1 {
     font-size: 50px;
@@ -181,6 +184,16 @@ export const TextContent = styled.div`
       font-size: 15px;
     }
   }
+`;
+
+export const TextContent = tw(TextContentS)`
+  float
+  text-center
+  justify-end
+  grid
+  w-1/3
+  text-xl
+  h-96
 `;
 
 export const MoreButtonStyled = styled.div`

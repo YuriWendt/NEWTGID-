@@ -14,13 +14,13 @@ export const StyledContainer = styled.div`
   max-width: inherit;
   display: flex;
   box-shadow: 0 0 10px ${theme.colors.primary.color100};
-  height: 80px;
   margin: 0 auto;
   box-sizing: border-box;
   padding: 0;
   justify-content: space-between;
   background: url(${theme.img.backgroundgradient});
   position: fixed;
+  top: 0;
   z-index: 30;
 
   span {

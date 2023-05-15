@@ -13,7 +13,6 @@ export function Home() {
 
     return (
         <>
-            <div>
                 <Sections id="section1">
                     <ContainerLine>
                         <Line
@@ -77,7 +76,6 @@ export function Home() {
                         <ContactUs />
                     </StyledContainer>
                 </Sections>
-            </div>
         </>
     );
 }

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
-export const SectionWrapper = styled.section`
+export const SectionWrapper = styled.div`
+  width: 100%;
   position: relative;
   height: 100vh;
 
